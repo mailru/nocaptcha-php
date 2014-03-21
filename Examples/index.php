@@ -54,7 +54,7 @@ require_once('../Package/nocaptcha/captcha.php');
 
 <?php
 if($_POST) {
-    $captcha = check_captcha($private_key, $_POST['nocaptcha_id'], $_POST['nocaptcha_value'], $api_server);
+    $captcha = check_captcha($private_key, $_POST['captcha_id'], $_POST['captcha_value'], $api_server);
 }
 
 if(isset($captcha) && $captcha === true):
