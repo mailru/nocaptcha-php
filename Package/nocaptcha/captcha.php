@@ -81,5 +81,5 @@ function source_captcha($public_key, $api_server='') {
  * @return string
  */
 function display_captcha($public_key, $api_server='') {
-    return '<script src="'.source_captcha($public_key, $api_server).'" type="text/javascript"></script>';
+    return '<script async src="'.source_captcha($public_key, $api_server).'" type="text/javascript"></script>';
 }
