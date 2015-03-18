@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<?php if ($form): ?>
+<html>
+    <head>
+        <?=$nocaptcha_script?>
+    </head>
+    <body>
+        <form action="#" method="POST">
+            <p>text<br><input type="text" name="text" size="30"></p>
+            <p><div id="nocaptcha"></div></p>
+            <p><input type="submit" value="submit"></p>
+        </form>
+    </body>
+</html>
+<?php else: ?>
+<html>
+    <head></head>
+    <body>
+        <p>result: '<?=$result?>', <a href="">try again</a></p>
+    </body>
+</html>
+<?php endif ?>

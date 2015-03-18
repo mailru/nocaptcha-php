@@ -1,0 +1,18 @@
+<?php
+
+// helper to separate code from templates
+function expand_template($file, $vars = NULL)
+{
+    if ($vars !== NULL)
+        extract($vars, EXTR_OVERWRITE);
+    include $file;
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // do form processing here
+    $vars['result'] = 'ok';
+} else {
+    // simply display the form
+    $vars['form'] = true;
+}
+expand_template('template.html', $vars);

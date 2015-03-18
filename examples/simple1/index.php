@@ -12,7 +12,7 @@ $api_server = 'https://api-nocaptcha.mail.ru';
 $public_key = '8dd9f759e0bf146a9a13206df6feadfe';
 $private_key = 'dca7c260125df4b6ab29b25811cb32bc';
 
-require_once('../Package/nocaptcha/captcha.php');
+require_once('../../Package/nocaptcha/captcha.php');
 
 ?>
 <!DOCTYPE html>
