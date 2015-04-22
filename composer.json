@@ -1,0 +1,29 @@
+{
+    "name": "sanmai/nocaptcha",
+    "description": "Некапча Mail.Ru",
+    "keywords": ["captcha"],
+    "homepage": "https://nocaptcha.mail.ru/",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Kopytko",
+            "email": "alexey@kopytko.ru"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.5"
+    },
+    "autoload": {
+        "psr-0": { "NoCaptcha": "src/" }
+    },
+    "autoload-dev": {
+        "psr-0": { "NoCaptcha": "tests/" }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
