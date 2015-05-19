@@ -1,0 +1,23 @@
+{
+    "name": "mailru/nocaptcha",
+    "description": "PHP module for working with Nocaptcha Mail.Ru service",
+    "keywords": ["captcha", "antispam", "mailru", "nocaptcha"],
+    "homepage": "https://nocaptcha.mail.ru",
+    "license": "CC0-1.0",
+    "authors": [
+        {
+            "name": "Oleg Kovalev",
+            "email": "man0xff@gmail.com"
+        }
+    ],
+    "support": {
+        "email": "nocaptcha@corp.mail.ru",
+        "source": "https://github.com/mailru/nocaptcha-php"
+    },
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "files": ["Package/nocaptcha/captcha.php"]
+    }
+}
