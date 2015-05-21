@@ -12,7 +12,11 @@ $api_server = 'https://api-nocaptcha.mail.ru';
 $public_key = '8dd9f759e0bf146a9a13206df6feadfe';
 $private_key = 'dca7c260125df4b6ab29b25811cb32bc';
 
-require_once('../../Package/nocaptcha/captcha.php');
+require_once('../../src/Nocaptcha.php');
+
+use Mailru\Nocaptcha;
+
+$nc = new Mailru\Nocaptcha($public_key, $private_key);
 
 ?>
 <!DOCTYPE html>
@@ -25,8 +29,8 @@ require_once('../../Package/nocaptcha/captcha.php');
 
     <!-- Three ways to include js to display captcha widget
     <!--<script src="<?=$api_server?>/captcha?public_key=<?=$public_key?>" type="text/javascript"></script>-->
-    <script src="<?=source_captcha($public_key, $api_server)?>" type="text/javascript"></script>
-    <!--<?=display_captcha($public_key, $api_server)?>-->
+    <script src="<?=$nc->generateScriptUrl()?>" type="text/javascript"></script>
+    <!--<?=$nc->generateScriptTag()?>-->
 
     <script type="text/javascript">
         $(function(){
@@ -54,7 +58,7 @@ require_once('../../Package/nocaptcha/captcha.php');
 
 <?php
 if($_POST) {
-    $captcha = check_captcha($private_key, $_POST['captcha_id'], $_POST['captcha_value'], $api_server);
+    $captcha = $nc->check($_POST['captcha_id'], $_POST['captcha_value']);
 }
 
 if(isset($captcha) && $captcha === true):

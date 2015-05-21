@@ -8,6 +8,9 @@ Usage
 
 Please see Examples directory.
 
+Usage of Package/nocaptcha/captcha.php is deprecated. Use Mailru/Nocaptcha
+class instead.
+
 About
 -----
 
